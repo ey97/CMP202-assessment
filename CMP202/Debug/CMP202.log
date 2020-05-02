@@ -1,0 +1,4 @@
+﻿  Main.cpp
+C:\Users\Elliot\Documents\Assesment\CMP202\CMP202\CMP202\Main.cpp(69,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Elliot\Documents\Assesment\CMP202\CMP202\CMP202\Main.cpp(42,6): warning C4101: 'count': unreferenced local variable
+  CMP202.vcxproj -> C:\Users\Elliot\Documents\Assesment\CMP202\CMP202\Debug\CMP202.exe
