@@ -19,22 +19,13 @@ void Farm::run(int& results)
 
 
 	for (int i = 0; i < thread_count; i++) {
-		std::thread* t = new std::thread([&] {infinite_loop(results);});
+		std::thread* t = new std::thread([&] {infinite_loop(results);}); //create thread and run function
 		threads.push_back(t);
 	}
 
 
 	for (int i = 0; i < threads.size(); i++) {
-		if (threads[i]->joinable())
-		{
 			threads[i]->join();
-			
-
-
-
-		}
-
-
 	}
 
 	for (int i = 0; i < threads.size(); i++) {
@@ -45,16 +36,17 @@ void Farm::run(int& results)
 
 }
 
-void Farm::infinite_loop(int& results) { // run needs to be passed a promise
+void Farm::infinite_loop(int& results) {
 
 	while (!queue.empty())
 	{	
 		queue_mutex.lock();
 		auto temp = queue.front();
+		
 		queue.pop();
 		queue_mutex.unlock();
-		temp->run(results);
-		delete temp;
+		temp->run(results); //memory violation here when running hgh numbers of instances of the test, smaller numbers work fine // variables being reused upon re-entry of function? FIX ME //
+		
 	}
 
 	return;

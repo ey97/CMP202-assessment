@@ -86,7 +86,7 @@ int run() {
 	return results;
 }
 
-int thread_based(int& thread_count, int games) {
+void thread_based(int& thread_count, int games, int& won) {
 
 	
 
@@ -101,20 +101,17 @@ int thread_based(int& thread_count, int games) {
 
 	Farm farm(thread_count);
 	int games_dealer_won = 0;
-	int* results = &games_dealer_won;
-
-
 
 
 	for (int i = 0; i < games; i++) {
 		Task* t = new CardTask;
 		farm.add_task(t);
-
+		
 	}
 
-	farm.run(*results);
+	farm.run(won);
 
-	return *results;
+	
 	
 }
 
@@ -151,9 +148,9 @@ int main() {
 
 		}
 
-		games_dealer_won = thread_based(thread_count, game_count);
+		thread_based(thread_count, game_count, games_dealer_won); //thread function runs as many threads as user entered
 
-		std::cout << "\n\n\nDealer won: " << games_dealer_won << " games of  using " << thread_count << " threads. \ntook: ";
+		std::cout << "\n\n\nDealer won: " << games_dealer_won << " games of "<< game_count << " using " << thread_count << " threads. \ntook: ";
 
 		games_dealer_won = 0;
 
@@ -161,7 +158,7 @@ int main() {
 			games_dealer_won = games_dealer_won + run();
 		}
 
-		std::cout << "\nDealer won: " << games_dealer_won << " using single thread. \ntook: ";
+		std::cout << "\nDealer won: " << games_dealer_won << " games of " << game_count << " using single thread. \ntook: ";
 
 
 		count = count - 1;
