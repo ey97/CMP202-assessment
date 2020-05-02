@@ -129,7 +129,7 @@ int main() {
 	while (running)
 	{
 
-
+		//timer needs implimented
 
 		int games_dealer_won = 0;
 
