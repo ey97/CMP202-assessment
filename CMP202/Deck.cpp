@@ -21,6 +21,10 @@ Deck::Deck() {
 	changeDeckType();
 }
 
+Deck::~Deck() {
+//	delete currentDeck;
+}
+
 Deck::Deck(int deckCount)
 {
 	//create as many decks as user specifies
@@ -104,7 +108,7 @@ void Deck::changeDeckType() {
 }
 
 Card Deck::deal() {
-	auto c = currentDeck->back();
+	auto card = currentDeck->back();
 	currentDeck->pop_back();
-	return c;
+	return card;
 }

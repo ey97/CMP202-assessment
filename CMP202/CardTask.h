@@ -16,16 +16,14 @@
 class CardTask : public Task
 {
 
-	std::vector<Player*> players;
+
 
 	bool blackjackCheck(Player* hand);
 public:
 
-
+	std::vector<Player> players;
 
 	void run(int& results);
-
-	void run();
 
 
 

@@ -1,2 +1,4 @@
-﻿  Main.cpp
+﻿  Deck.cpp
+c:\users\elliot\documents\assesment\cmp202\cmp202\cmp202\deck.cpp(69): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\elliot\documents\assesment\cmp202\cmp202\cmp202\deck.cpp(82): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   CMP202.vcxproj -> C:\Users\Elliot\Documents\Assesment\CMP202\CMP202\x64\Debug\CMP202.exe

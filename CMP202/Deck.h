@@ -22,6 +22,7 @@ public:
 
 
 	Deck();
+	~Deck();
 	Deck(int deckCount);
 	void shuffle();
 

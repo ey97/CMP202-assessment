@@ -15,7 +15,7 @@ public:
 	}
 
 	/** Perform the task. Subclasses must override this. */
-	virtual void run() = 0;
+	//virtual void run() = 0;
 	virtual void run(int& results) = 0;
 
 };

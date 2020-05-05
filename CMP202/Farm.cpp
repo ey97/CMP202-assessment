@@ -37,10 +37,15 @@ void Farm::run(int& results)
 }
 
 void Farm::infinite_loop(int& results) {
-
+	
+	
 	while (!queue.empty())
 	{	
 		queue_mutex.lock();
+		if (queue.empty()) {
+			queue_mutex.unlock();
+			return;
+		}
 		auto temp = queue.front();
 		
 		queue.pop();
